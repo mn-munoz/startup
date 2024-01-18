@@ -24,8 +24,10 @@ If you are someone creative and enjoys character creation, it might be hard to k
 - Javascript: Provides login, complex design things that cannot be done with pure css, and backend endpoints. (this might change in the future)
 - Service: Backend endpoitns for: 
     * Login
-- DB/Login
-- React
+    * Getting data for cards
+    * Notifiying if new character was created by someone
+- DB/Login: Store, register, and login users. Credentials securly stored in database. Can't create character cards unless authenticated
+- React: Application Uses Reach framework
 
 ## HTML
 
