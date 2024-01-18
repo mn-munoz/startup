@@ -8,6 +8,8 @@ If you are someone creative and enjoys character creation, it might be hard to k
 
 ## Design
 
+Idea design for website
+
 ![Picture displaying possible design of website](design-picture.jpg)
 
 ## Key Features
