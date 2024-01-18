@@ -19,12 +19,13 @@ If you are someone creative and enjoys character creation, it might be hard to k
 
 ## Technologies
 
-- HTML
-- CSS
-- Javascript
-- Service 
+- HTML: Uses correct HTML structure. Includes two pages: one for login and one including the character login (this might change in the future)
+- CSS: Uses valid CSS and preferably will include a responsive design
+- Javascript: Provides login, complex design things that cannot be done with pure css, and backend endpoints. (this might change in the future)
+- Service: Backend endpoitns for: 
+    * Login
 - DB/Login
-- 
+- React
 
 ## HTML
 
