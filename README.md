@@ -10,7 +10,21 @@ If you are someone creative and enjoys character creation, it might be hard to k
 
 ## Key Features
 
+- Secure Login over HTTPS.
+- Ability to create and delete character cards.
+- Ability to edit character cards informtion.
+- Ability to do basic costumatization on cards.
+- Ability to show when another user has created a character card.
+
+
 ## Technologies
+
+- HTML
+- CSS
+- Javascript
+- Service 
+- DB/Login
+- 
 
 ## HTML
 
