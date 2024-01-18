@@ -8,6 +8,8 @@ If you are someone creative and enjoys character creation, it might be hard to k
 
 ## Design
 
+![Picture displaying possible design of website](design-picture.jpg)
+
 ## Key Features
 
 - Secure Login over HTTPS.
