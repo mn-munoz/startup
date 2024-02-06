@@ -2,6 +2,8 @@
 
 [Notes](notes.md)
 
+### Personal Notes: I know I don't hae a lot of commit spread out for this part of the project, i knoew and I promise to do better specially now that we are incorporating css and java script in the future. Just to let you know that I am aware and ill try to change my work ethic throughout the proyect. 
+
 # Idea pitch
 
 If you are someone creative and enjoys character creation, it might be hard to know how many characters you have and their information. My idea is to make it possible for people to create a gallery of *cards* that hold the information of characters to make it easier to organize and visualie to  you. 
@@ -37,11 +39,16 @@ Idea design for website
 
 Structure of program is form by:
 
-- HTML PAGES: One for login and one for the character gallery
-- Character Card component: structure to hold the basic description of character 
-- Text: each card with the basic description tht the card contains
-- DB/Login: input and submit button for login
-- Websocket: displays if other users have submited a character
+- HTML pages for each component of your application: Implemented in the shapes of index.html, deck.html, about.html, and updates.html - DONE
+- Proper use of HTML tags including BODY, NAV, MAIN, HEADER, FOOTER - DONE
+- Links between pages as necessary - DONE
+- Application textual content: In the shape of card component, about.html and updates.html - DONE
+- Character Card component: structure to hold the basic description of character - DONE
+- Placeholder for 3rd party service calls: There are two posible places. What I really want i to have a third party service in order to have icons that can be put in the card as an image in place of the dog icon. If that can't be done then there is a place in the about.htlm where I could implement a call to a third party in order to get quotes — DONE
+- Application images: In the chape of the image in the card component in the deck.html page - DONE
+- DB/Login: input and submit button for login - DONE 
+-  Database data placeholder showing content stored in the database: In the shape of the deck.html wehre the database will save the cards of the user - DONE 
+- Websocket: displays if other users have submited a character - DONE
 
 ## CSS
 
