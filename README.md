@@ -2,7 +2,7 @@
 
 [Notes](notes.md)
 
-### Personal Notes: I know I don't hae a lot of commit spread out for this part of the project, i knoew and I promise to do better specially now that we are incorporating css and java script in the future. Just to let you know that I am aware and ill try to change my work ethic throughout the proyect. 
+### Personal Notes: I know I don't have a lot of commit spread out for this part of the project, i knoew and I promise to do better specially now that we are incorporating css and java script in the future. Just to let you know that I am aware and ill try to change my work ethic throughout the proyect. 
 
 # Idea pitch
 
