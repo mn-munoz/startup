@@ -1,0 +1,71 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100dvh;
+    /* color: rgb(255, 255, 255); */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+}
+
+.wrapper {
+    inline-size: 45dvw;
+    background-color: rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    padding: 2em 2.8em;
+    border: 0.1rem solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.wrapper h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.wrapper .input-box {
+    position: relative;
+    inline-size: 100%;
+    block-size: 3.5rem;
+    margin: 1.8rem 0;
+}
+
+.input-box input {
+    inline-size: 100%;
+    block-size: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 0.2rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    color: rgb(255, 255, 255);
+    padding: 1.2rem 7.5rem 1.2rem 1.2rem;
+}
+
+.input-box input::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+.input-box i {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+}
+
+.wrapper .btn {
+    inline-size: 100%;
+    block-size: 3.5rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}

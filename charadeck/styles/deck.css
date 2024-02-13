@@ -33,6 +33,6 @@
 
 .card-back {
     height: 100%;
-    background-color: blue;
+    background-color: whitesmoke;
     transform: rotateY(180deg);
 }
