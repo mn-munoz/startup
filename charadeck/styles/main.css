@@ -1,6 +1,17 @@
 body {
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(61,38,69,1) 35%, rgba(131,33,97,1) 64%, rgba(218,65,103,1) 100%);
+    display: flex;
+    flex-direction: column;
+    min-block-size: 100dvh;
 }
+
+
+main {
+    display: flex;
+    flex-grow: 1;
+    color: rgb(255, 255, 255);
+}
+
 
 footer {
     min-block-size: 4em;

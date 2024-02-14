@@ -1,16 +1,6 @@
-body{
-    display: flex;
-    flex-direction: column;
-    min-block-size: 100dvh;
-    /* color: rgb(255, 255, 255); */
-}
-
 main {
-    display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
-    color: rgb(255, 255, 255);
 }
 
 .wrapper {

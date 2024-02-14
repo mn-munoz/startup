@@ -1,9 +1,26 @@
-.card {
-    width: 22rem;
-    height: 33rem;
-    perspective: 1000px;
+main {
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+}
 
-    border: 0.5rem solid black;
+div.card-deck {
+    margin: 4rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4em;
+    inline-size: 80dvw;
+    padding: 5rem;
+    background-color: rgba(255, 255, 255, 0.89);
+}
+
+.card {
+    --card-width: 22rem;
+    --card-height: calc(var(--card-width) * 1.5); 
+    width: var(--card-width);
+    height: var(--card-height);
+    perspective: 1000px;
+    background-color: transparent;
+    border: 0.5rem solid rgb(255, 255, 255);
 }
 
 .card-inner {
@@ -35,4 +52,25 @@
     height: 100%;
     background-color: whitesmoke;
     transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 1090px){
+    div.card-deck {
+        inline-size: 85dvw;
+        margin: 4 auto;
+        gap: 2rem;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    div.card-deck {
+        padding: 2rem;
+    }
+
+    .card {
+        --card-width: 20rem;
+    }
+
 }
