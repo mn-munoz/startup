@@ -54,6 +54,13 @@ div.card-deck {
     transform: rotateY(180deg);
 }
 
+
+@media (hover: none) {
+    .card-back {
+        transform: rotateY(0);
+    }
+}
+
 @media screen and (max-width: 1090px){
     div.card-deck {
         inline-size: 85dvw;
