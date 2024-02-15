@@ -1,0 +1,19 @@
+main {
+    flex-direction: column;
+}
+
+.heading-image {
+    background-image: url("images/image-sample.jpeg");
+    min-inline-size: 100dvw;
+    min-block-size: 20dvh;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    background-color: rgba(255, 255, 255, 0.271);
+    margin: 3rem auto;
+    padding: 2rem;
+    max-inline-size: 60rem;
+    border-radius: 10px;
+}

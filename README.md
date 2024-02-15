@@ -54,10 +54,16 @@ Structure of program is form by:
 
 Stylizitation of page is form by:
 
-- selected color pallet for webpage - to have consistent look
-- Responsive design - web respons to diferent window sizes (Desktop, mobile, and tablet)
-- Typography - Clear and redable fonts with appropirate spacing between font letters, lines, and whitespaces
-- Style consistancy - Make code and webpage apperiance be consistent. Make design be clear and simple for the User
+- selected color pallet for webpage - to have consistent look - DONE
+- Responsive design - web respons to diferent window sizes (Desktop, mobile, and tablet) - DONE 
+- Typography - Clear and redable fonts with appropirate spacing between font letters, lines, and whitespaces - DONE 
+- Style consistancy - Make code and webpage apperiance be consistent. Make design be clear and simple for the User - DONE
+- Styles for Header, footer, and main content body - DONE 
+- Navigation elements (idk what this was talking about but there is a nav bar that is stylized using bootstrap) - DONE 
+- Application elements in the form of the cards in the deck.html - DONE 
+- Application text content in about.html and cards content in deck.html - DONE 
+- Application images in about.html - DONE 
+
 
 ## Javascript
 
