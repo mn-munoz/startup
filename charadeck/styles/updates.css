@@ -1,0 +1,30 @@
+main {
+    flex-direction: column;
+    padding: 5rem;
+    gap: 1em;
+    align-items: center;
+}
+
+.main-con {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.272);
+    padding: 0.5rem;
+    border-radius: 10px;
+    inline-size: 100%;
+    max-inline-size: 50rem;
+}
+
+main h1 {
+    text-align: center
+}
+
+th {
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    main {
+        padding: 2rem;
+    }
+}
