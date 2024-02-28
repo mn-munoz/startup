@@ -10,7 +10,7 @@ function login() {
     if (usersDataText) {
         usersData = JSON.parse(usersDataText);
     }
-    
+
     usersData.push(loginData);
 
     localStorage.setItem('usersData', JSON.stringify(usersData));
