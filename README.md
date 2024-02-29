@@ -71,7 +71,7 @@ Honestly this is a work in progress. I need to learn more javascript to know how
 
 - login - onece you login you enter the character gallery - DONE
 - database - display the character cards of the specific user
-- Websocket - shows when another user has created a character card
+- Websocket - shows when another user has created a character card - DONE
 - Application logic - creating the cards
 
 ## Service Deliverance
