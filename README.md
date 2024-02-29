@@ -69,9 +69,10 @@ Stylizitation of page is form by:
 
 Honestly this is a work in progress. I need to learn more javascript to know how to use it in the project but this is an idea:
 
-- login - onece you login you enter the character gallery
+- login - onece you login you enter the character gallery - DONE
 - database - display the character cards of the specific user
 - Websocket - shows when another user has created a character card
+- Application logic - creating the cards
 
 ## Service Deliverance
 
