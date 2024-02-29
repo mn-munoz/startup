@@ -70,8 +70,8 @@ Stylizitation of page is form by:
 Honestly this is a work in progress. I need to learn more javascript to know how to use it in the project but this is an idea:
 
 - login - onece you login you enter the character gallery - DONE
-- database - save the data of the cards of the user - DONE (note: literally it is saving the data in local storage. When you refresh the page though, the cards disappear from the deck but the data IS still in local storage. 
-I just need to implement a function to load them back :D)
+- database - save the data of the cards of the user - DONE (note: literally it is saving the data in local storage. When you refresh the page though, the cards disappear from the deck but the data IS still in local storage.  
+I just need to implement a function to load them back :D However it is all buggy so I still need to fix this part. But hey kind of works)
 - Websocket - shows when another user has created a character card - DONE
 - Application logic - creating the cards - DONE 
 
