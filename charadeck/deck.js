@@ -1,8 +1,10 @@
 function getUser () {
     username = localStorage.getItem('user');
+    return username;
 }
 
 function addCard() {
+    let cards = [];
     const deck = document.querySelector('.card-deck');
 
     let charName = prompt("Give a name to your character", "Enter name");
@@ -19,9 +21,19 @@ function addCard() {
 
     deck.innerHTML = deck.innerHTML + `<div class="card"> <div class="card-inner"> <div class="card-front"></div><div class="card-back"><div class="card-body"><h2 class="char-name">${charName}</h2><p>${birthday}</p><h3>Like</h3><ul class="likes"><li>${likeOne}</li><li>${likeTwo}</li><li>${likeThree}</li></ul><h3>Dislikes</h3><ul class="dislikes"><li>${dislikeOne}</li><li>${dislikeTwo}</li></ul></div></div></div></div>`
 
-    
-}
 
-function loadCards() {
+    const cardsData = localStorage.getItem('userCards');
+
+    if (cardsData) {
+        cardsDataText = JSON.parse(cardsData);
+        cards = cardsDataText.crds;
+    }
+
+    
+    const card = {chrn : charName, bd: birthday , l1: likeOne, l2: likeTwo, l3: likeThree, d1: dislikeOne, d2: dislikeTwo}
+    cards.push(card);
+    const userCards = {usnm : getUser(), crds : cards};
+
+    localStorage.setItem('userCards', JSON.stringify(userCards));
 
 }
