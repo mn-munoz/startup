@@ -7,6 +7,8 @@ function login() {
 
     const usersDataText = localStorage.getItem('usersData');
 
+    const user = localStorage.setItem('user', userName);
+
     if (usersDataText) {
         usersData = JSON.parse(usersDataText);
     }
@@ -15,4 +17,5 @@ function login() {
 
     localStorage.setItem('usersData', JSON.stringify(usersData));
     window.location.href = "deck.html";
+    return false;
 }
