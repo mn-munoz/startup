@@ -27,6 +27,12 @@ function addCard() {
     if (cardsData) {
         cardsDataText = JSON.parse(cardsData);
         cards = cardsDataText.crds;
+
+        if (getUser() in cardsData) {
+            console.log(cards);
+        }
+
+        
     }
 
     
