@@ -1,6 +1,12 @@
 let usersData = [];
 
-function login() {
+function login(event) {
+    form = document.querySelector('form');
+    event.preventDefault();
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return false;
+    }
     const userName = document.querySelector("#name").value;
     const password = document.querySelector("#pswd").value;
     const loginData = {usrnm : userName, pwd : password};
@@ -17,5 +23,5 @@ function login() {
 
     localStorage.setItem('usersData', JSON.stringify(usersData));
     window.location.href = "deck.html";
-    return false;
+    
 }
