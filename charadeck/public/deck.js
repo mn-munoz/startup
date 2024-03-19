@@ -5,6 +5,8 @@ function getUser () {
 
 function addCard() {
     let cards = [];
+    let usersData = [];
+    let userCards = {usnm: null, crds: null};
     const deck = document.querySelector('.card-deck');
 
     let charName = prompt("Give a name to your character", "Enter name");
@@ -22,24 +24,39 @@ function addCard() {
     deck.innerHTML = deck.innerHTML + `<div class="card"> <div class="card-inner"> <div class="card-front"></div><div class="card-back"><div class="card-body"><h2 class="char-name">${charName}</h2><p>${birthday}</p><h3>Like</h3><ul class="likes"><li>${likeOne}</li><li>${likeTwo}</li><li>${likeThree}</li></ul><h3>Dislikes</h3><ul class="dislikes"><li>${dislikeOne}</li><li>${dislikeTwo}</li></ul></div></div></div></div>`
 
 
-    const cardsData = localStorage.getItem('userCards');
+    let usersDecks = localStorage.getItem('Decks');
+    let decks = [];
 
-    if (cardsData) {
-        cardsDataText = JSON.parse(cardsData);
-        cards = cardsDataText.crds;
+    if (usersDecks) {
+        decks = JSON.parse(usersDecks);
+        usersData = decks;
 
-        if (getUser() in cardsData) {
-            console.log(cards);
+        usersData.forEach(deck => {
+            if (deck.usnm === getUser()) {
+                cards = deck.crds;
+            }
+        });
+    }
+    
+    card = {chrn : charName, bd: birthday , l1: likeOne, l2: likeTwo, l3: likeThree, d1: dislikeOne, d2: dislikeTwo};
+    cards.push(card);
+
+    let found = false;
+
+    usersData.forEach(deck => {
+        if (deck.usnm === getUser()) {
+            deck.crds = cards;
+            found = true;
         }
+    });
 
+    if (!found) {
+        userCards.usnm = getUser();
+        userCards.crds = cards;
+        usersData.push(userCards);
         
     }
 
+    localStorage.setItem('Decks', JSON.stringify(usersData));
     
-    const card = {chrn : charName, bd: birthday , l1: likeOne, l2: likeTwo, l3: likeThree, d1: dislikeOne, d2: dislikeTwo}
-    cards.push(card);
-    const userCards = {usnm : getUser(), crds : cards};
-
-    localStorage.setItem('userCards', JSON.stringify(userCards));
-
 }
