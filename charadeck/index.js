@@ -17,7 +17,7 @@ apiRouter.get('/decks', (_req, res) => {
 apiRouter.post('/decks/cards/addCard', (req, res) => {
     const {username, card} = req.body;
     addCard(username, card);
-    res.status(201);
+    res.status(201).send(decks);
 });
 
 app.use((_req, res) => {
@@ -44,5 +44,5 @@ function addCard(username, card) {
         d2: card.dislikeTwo   
     };
 
-    deck[username].push(newCard);
+    decks[username].push(newCard);
 }

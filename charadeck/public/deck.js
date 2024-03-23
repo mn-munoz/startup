@@ -81,11 +81,13 @@ async function addCard () {
             body: JSON.stringify({ username, card }),
         });
 
+        console.log(resp.body);
         if (!resp.ok) {
             throw new Error("Network Response was not succesful");
         }
 
-        updateHTML(username, card);
+        console.log(resp);
+        updateHTML(card);
 
     } catch(error) {
         console.error("POST request not succesfull", error.message);
@@ -96,7 +98,7 @@ async function addCard () {
 function updateHTML(card) {
     const deck = document.querySelector('.card-deck');
 
-    const cardHTML = `
+    let cardHTML = `
         <div class="card">
             <div class="card-inner">
                 <div class="card-front"></div>
@@ -120,7 +122,6 @@ function updateHTML(card) {
             </div>
         </div>
     `;
-
-    cardHTML += deck.innerHTML;
+    deck.innerHTML = cardHTML +  deck.innerHTML;
 }
 
