@@ -3,7 +3,7 @@ main {
 }
 
 .heading-image {
-    background-image: url("images/image-sample.jpeg");
+    /* background-image: url("images/image-sample.jpeg"); */
     min-inline-size: 100dvw;
     min-block-size: 20dvh;
     background-size: cover;
