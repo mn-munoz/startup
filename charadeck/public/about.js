@@ -1,17 +1,3 @@
-
-// function displayPicture() {
-//     fetch('/api/images')
-//     .then(response => response.json())
-//         .then(data => {
-//             const headingImage = document.querySelector('.heading-image');
-//             headingImage.style.backgroundImage = `url(${data.imageUrl})`;
-//         })
-//         .catch(error => {
-//             console.error("Error fetching image:", error);
-//         });
-// }
-
-
 async function displayPicture() {
     try {
         const res = await fetch("https://api.pexels.com/v1/curated", {
