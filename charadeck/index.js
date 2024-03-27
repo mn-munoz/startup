@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const config = require('./dbConfig.json');
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -18,6 +19,10 @@ apiRouter.post('/decks/cards/addCard', (req, res) => {
     const {username, card} = req.body;
     addCard(username, card);
     res.status(201).send(decks);
+});
+
+apiRouter.get('/config', (_req, res ) => {
+    res.send(config);
 });
 
 app.use((_req, res) => {

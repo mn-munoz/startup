@@ -1,8 +1,10 @@
+const config = fetch('/api/config');
+
 async function displayPicture() {
     try {
         const res = await fetch("https://api.pexels.com/v1/curated", {
             headers: {
-                Authorization: 'a0oTtsCqFPHADv5rg33dEI4FUQEL5reTCdEZnCjD1tcCUN2u6zcF3yy0'
+                Authorization: config.authorization
             }
         })
         const data = await res.json();
