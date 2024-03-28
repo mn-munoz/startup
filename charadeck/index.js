@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const config = require('./dbConfig.json');
+const db = require('./database.js');
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
+
+const authCookieName = 'token';
 
 app.use(express.json());
 
@@ -22,7 +25,7 @@ apiRouter.post('/decks/cards/addCard', (req, res) => {
 });
 
 apiRouter.get('/config', (_req, res ) => {
-    res.send(config);
+    res.send(JSON.stringify(config));
 });
 
 app.use((_req, res) => {
@@ -32,7 +35,6 @@ app.use((_req, res) => {
 app.listen(port, () => {
     console.log(`running on port ${port}`);
 })
-
 
 let decks = {};
 function addCard(username, card) {
