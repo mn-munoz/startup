@@ -40,6 +40,10 @@ async function createUser(userName, password) {
     return user;
   }
 
+
+// Have to look how that will be like but hopefully something like
+//user: xxxx
+// deck: [{}{}{}] with {} being data of a card
 function addDeck(deck) {
     deckCollection.insertOne(deck);
 }
@@ -53,5 +57,5 @@ module.exports = {
     getUserByToken,
     createUser,
     addDeck,
-    getDeck,
+    addCard,
 };

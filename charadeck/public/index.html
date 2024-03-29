@@ -25,12 +25,6 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="deck.html">My Deck</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="updates.html">Updates</a>
-                      </li>
-                      <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                       </li>
                     </ul>
@@ -55,6 +49,12 @@
                 <button type="submit" class="btn btn-light" onclick="return login(event)">Log in</button>
                 <button type="submit" class="btn btn-light" onclick="return create(event)">Create</button>
             </form>
+        </div>
+
+        <div class="wrapper" id="deck-ctrl" style="display: none;">
+          <h2 id="username"></h2>
+          <button class="btn btn-light" onclick="toDeck()">Go to Deck</button>
+          <button class="btn btn-light" onclick="logout()">Logout</button>
         </div>
 
         <div class="modal fade" id="msgModal" tabindex="-1">

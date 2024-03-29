@@ -1,7 +1,16 @@
-let usersData = [];
-
-setDisplay('login-ctrl', 'block');
-
+(async () => {
+    const userName = localStorage.getItem('userName');
+    if (userName) {
+      document.querySelector('#username').textContent = userName;
+      setDisplay('login-ctrl', 'none');
+      setDisplay('deck-ctrl', 'block');
+    } else {
+      setDisplay('login-ctrl', 'block');
+      setDisplay('deck-ctrl', 'none');
+    }
+  })();
+  
+// Remember to delete this later
 function loginn(event) {
     form = document.querySelector('form');
     event.preventDefault();
@@ -76,6 +85,18 @@ async function loginOrCreate(endpoint, event) {
         console.error('Fetch error:', error);
     }
 }
+
+function toDeck() {
+    window.location.href = 'deck.html';
+}
+
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    }).then(() => (window.location.href = '/'));
+ }
+  
 
 function setDisplay(controlId, display) {
     const playControlEl = document.querySelector(`#${controlId}`);
