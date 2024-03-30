@@ -97,7 +97,7 @@ I just need to implement a function to load them back :D However it is all buggy
 - Backend listens for WebSocket connection (by using the peerProxy given in simon.)- DONE
 - Frontend makes WebSocket connection (Both in updates.js and deck.js) - DONE
 - Data sent over WebSocket connection (From deck.html/js to updates.html/js)-  DONE
-- WebSocket data displayed (in updates.html) - DONE
+- WebSocket data displayed (in updates.html)(However this is buggy cuz it says the wrong name but I'll fix this) - DONE
 
 ## React Deliverance 
 
