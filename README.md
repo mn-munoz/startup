@@ -77,20 +77,20 @@ I just need to implement a function to load them back :D However it is all buggy
 
 ## Service Deliverance
 
-- Node.js/Express HTTP service - Not started
-- Static middleware for frontend - Not started
-- Calls to third party endpoints - Not started
-- Backend service endpoints - Not started
-- Frontend calls service endpoints - Not started
+- Node.js/Express HTTP service (found in index.js)- DONE
+- Static middleware for frontend (I mean... I'm using Express)- DONE
+- Calls to third party endpoints (In about.html I am calling the Pexels API to get images)- DONE 
+- Backend service endpoints (Found in index.js) - DONE
+- Frontend calls service endpoints (Found in deck.html, index.html)- DONE
 
 ## DB/Login
 
-- MongoDB Atlas database created - Not started
-- Stores data in MongoDB - Not started
-- User registration - Not started
-- existing user - Not started
-- Use MongoDB to store credentials - Not started
-- Restricts functionality - Not started
+- MongoDB Atlas database created (Called charadeck)- DONE
+- Stores data in MongoDB (In the collections deck and user)- DONE
+- User registration (Found in login.js)- DONE
+- existing user (found in login.js)- DONE
+- Use MongoDB to store credentials (Found in the collection user)- DONE
+- Restricts functionality (Person cannot enter deck unles they have a token)- DONE
 
 ## WebSocket deliverance
 
