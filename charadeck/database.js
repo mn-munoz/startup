@@ -62,10 +62,6 @@ async function addCard(user, card) {
   }
 }
 
-function getDeck (deck) {
-    deckCollection.insertOne(deck);
-}
-
 module.exports = {
     getUser,
     getUserByToken,

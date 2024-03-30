@@ -81,11 +81,6 @@ secureApi.use(async (req, res, next) => {
     }
 });
 
-// secureApi.get('/decks', async (req, res) => {
-//     const deck = await db.getDeck();
-//     res.send(deck);
-// });
-
 secureApi.post('/decks/cards/addCard', async (_req, res) => {
     const { username, card } = _req.body;
 
@@ -122,23 +117,4 @@ function setAuthCookie(res, authToken) {
       httpOnly: true,
       sameSite: 'strict',
     });
-}
-
-let decks = {};
-function addCard(username, card) {
-    if (!decks[username]) {
-        decks[username] = [];
-    }
-
-    let newCard = {
-        chrn: card.charName,
-        bd:card.birthday,
-        l1: card.likeOne,
-        l2: card.likeTwo,
-        l3: card.likeThree,
-        d1: card.dislikeOne,
-        d2: card.dislikeTwo   
-    };
-
-    decks[username].push(newCard);
 }
