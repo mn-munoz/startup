@@ -94,10 +94,10 @@ I just need to implement a function to load them back :D However it is all buggy
 
 ## WebSocket deliverance
 
-- Backend listens for WebSocket connection -  Not Started
-- Frontend makes WebSocket connection - Not Started
-- Data sent over WebSocket connection -  Not Started
-- WebSocket data displayed - Not Started
+- Backend listens for WebSocket connection (by using the peerProxy given in simon.)- DONE
+- Frontend makes WebSocket connection (Both in updates.js and deck.js) - DONE
+- Data sent over WebSocket connection (From deck.html/js to updates.html/js)-  DONE
+- WebSocket data displayed (in updates.html) - DONE
 
 ## React Deliverance 
 
