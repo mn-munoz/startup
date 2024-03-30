@@ -3,6 +3,10 @@ function getUser () {
     return username;
 }
 
+let socket;
+
+configureWebSocket();
+
 async function addCard () {
     try {
         const username = getUser(); // Assuming this function gets the username from localStorage
@@ -31,6 +35,12 @@ async function addCard () {
 
         saveDecksLocal(username,card );
         updateHTML(card);
+
+        const message = {
+            type: 'new_card',
+            username: username,
+        };
+        socket.send(JSON.stringify(message));
 
     } catch(error) {
         console.error("POST request not succesfull", error.message);
@@ -78,4 +88,21 @@ function saveDecksLocal(username, card) {
     decks[username].push(card);
 
     localStorage.setItem('decks', JSON.stringify(decks));
+}
+
+function configureWebSocket() {
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
+
+    socket.onopen = (event) => {
+        console.log('WebSocket connected');
+    };
+
+    socket.onclose = (event) => {
+        console.log('WebSocket disconnected');
+    };
+
+    socket.onerror = (error) => {
+        console.error('Error in WebSocket: ', error);
+    };
 }

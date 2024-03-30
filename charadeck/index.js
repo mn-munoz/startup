@@ -4,6 +4,7 @@ const config = require('./dbConfig.json');
 const db = require('./database.js');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
+const { peerProxy } = require('./peerProxy.js');
 
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -103,10 +104,6 @@ app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
 });
 
-app.listen(port, () => {
-    console.log(`running on port ${port}`);
-})
-
 app.use(function (err, req, res, next) {
     res.status(500).send({ type: err.name, message: err.message });
   });
@@ -118,3 +115,9 @@ function setAuthCookie(res, authToken) {
       sameSite: 'strict',
     });
 }
+
+const httpService = app.listen(port, () => {
+  console.log(`Listening on port ${port}`);
+});
+
+peerProxy(httpService);
