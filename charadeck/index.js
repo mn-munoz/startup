@@ -13,20 +13,11 @@ app.use(express.json());
 
 app.use(express.static('public'));
 app.set('trust proxy', true);
+app.use(cookieParser());
 
 var apiRouter = express.Router();
 
 app.use(`/api`, apiRouter);
-
-apiRouter.get('/decks', (_req, res) => {
-    res.send(decks);
-});
-
-apiRouter.post('/decks/cards/addCard', (req, res) => {
-    const {username, card} = req.body;
-    addCard(username, card);
-    res.status(201).send(decks);
-});
 
 apiRouter.get('/config', (_req, res ) => {
     res.send(JSON.stringify(config));
@@ -82,7 +73,7 @@ apiRouter.use(secureApi);
 
 secureApi.use(async (req, res, next) => {
     authToken = req.cookies[authCookieName];
-    const user = await DB.getUserByToken(authToken);
+    const user = await db.getUserByToken(authToken);
     if (user) {
       next();
     } else {
@@ -90,13 +81,28 @@ secureApi.use(async (req, res, next) => {
     }
 });
 
-// GetScores
-secureApi.get('/scores', async (req, res) => {
-    const deck = await db.getDeck();
-    res.send(deck);
-  });
-  
+// secureApi.get('/decks', async (req, res) => {
+//     const deck = await db.getDeck();
+//     res.send(deck);
+// });
 
+secureApi.post('/decks/cards/addCard', async (_req, res) => {
+    const { username, card } = _req.body;
+
+    try {
+        const user = await db.getUser(username);
+        if (!user) {
+            return res.status(404).send({ msg: 'User not found' });
+        }
+
+        await db.addCard(username, card);
+
+        res.status(201).send({ msg: 'Card added successfully' });
+    } catch (error) {
+        console.error('Error adding card:', error);
+        res.status(500).send({ msg: 'Internal server error' });
+    }
+});
 
 app.use((_req, res) => {
     res.sendFile('index.html', { root: 'public' });
@@ -116,7 +122,7 @@ function setAuthCookie(res, authToken) {
       httpOnly: true,
       sameSite: 'strict',
     });
-  }
+}
 
 let decks = {};
 function addCard(username, card) {

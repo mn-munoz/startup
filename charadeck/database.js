@@ -44,8 +44,22 @@ async function createUser(userName, password) {
 // Have to look how that will be like but hopefully something like
 //user: xxxx
 // deck: [{}{}{}] with {} being data of a card
-function addDeck(deck) {
+async function addDeck(deck) {
     deckCollection.insertOne(deck);
+}
+
+async function addCard(user, card) {
+  projection = {cards: 1, user: 1};
+  const cursor = await deckCollection.findOne({ user });
+
+  if (cursor) {
+    const updatedCards = [...cursor.cards, card];
+    await deckCollection.updateOne({ user }, { $set: { cards: updatedCards } });
+  } else {
+    const newUserDeck = { user, cards: [card] };
+    await addDeck(newUserDeck);
+    
+  }
 }
 
 function getDeck (deck) {

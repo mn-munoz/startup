@@ -1,5 +1,5 @@
 function getUser () {
-    username = localStorage.getItem('user');
+    username = localStorage.getItem('userName');
     return username;
 }
 
@@ -15,6 +15,7 @@ async function addCard () {
             dislikeOne: prompt("What does your character hate? (1/2)"),
             dislikeTwo: prompt("What does your character hate? (2/2)")
         };
+ 
         const resp = await fetch('/api/decks/cards/addCard', {
             method: 'POST',
             headers: {
@@ -23,7 +24,7 @@ async function addCard () {
             body: JSON.stringify({ username, card }),
         });
 
-        console.log(resp.body);
+        console.log(await resp);
         if (!resp.ok) {
             throw new Error("Network Response was not succesful");
         }
