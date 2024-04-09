@@ -9,27 +9,26 @@ export function Unauthenticated(props) {
     const [password, setPassword] = React.useState('');
     const [displayError, setDisplayError] = React.useState(null);
 
-    async function login(event) {
-        loginOrCreate(`/api/auth/login`, event);
+    async function login() {
+        loginOrCreate(`/api/auth/login`);
     }
 
-    async function create(event) {
-        loginOrCreate(`/api/auth/create`, event);
+    async function create() {
+        loginOrCreate(`/api/auth/create`);
     }
 
-    // function filled() {
-    //     const form = document.querySelector('form');
-    //     if (!form.checkValidity()) {
-    //         form.reportValidity();
-    //         return false;
-    //     }
-    //     return true;
-    // }
+    function validateForm() {
+        if (!userName || !password) {
+          setDisplayError('⚠ Please enter both username and password.');
+          return false;
+        }
+        return true;
+      }
 
     async function loginOrCreate(endpoint) {
-        // if (!filled()) {
-        //     return;
-        // }
+        if (!validateForm()) {
+            return;
+        }
     
         const response = await fetch(endpoint, {
           method: 'post',
@@ -56,7 +55,7 @@ export function Unauthenticated(props) {
     return (
         <>
             <div className="wrapper" id="login-ctrl">
-            <form method="get">
+            <form method="get" onSubmit={(e) => e.preventDefault()}>
                 <h2>Login</h2>
                 <div className="input-box">
                     <input type="text" id="userName" 
