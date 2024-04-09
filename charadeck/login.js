@@ -10,38 +10,38 @@
     }
   })();
   
-// Remember to delete this later
-function loginn(event) {
-    form = document.querySelector('form');
-    event.preventDefault();
-    if (!form.checkValidity()) {
-        form.reportValidity();
-        return false;
-    }
-    const userName = document.querySelector("#name").value;
-    const password = document.querySelector("#pswd").value;
-    const loginData = {usrnm : userName, pwd : password};
+// // Remember to delete this later
+// function loginn(event) {
+//     form = document.querySelector('form');
+//     event.preventDefault();
+//     if (!form.checkValidity()) {
+//         form.reportValidity();
+//         return false;
+//     }
+//     const userName = document.querySelector("#name").value;
+//     const password = document.querySelector("#pswd").value;
+//     const loginData = {usrnm : userName, pwd : password};
 
-    const usersDataText = localStorage.getItem('usersData');
+//     const usersDataText = localStorage.getItem('usersData');
 
-    const user = localStorage.setItem('user', userName);
+//     const user = localStorage.setItem('user', userName);
 
-    if (usersDataText) {
-        usersData = JSON.parse(usersDataText);
-    }
+//     if (usersDataText) {
+//         usersData = JSON.parse(usersDataText);
+//     }
 
-    usersData.push(loginData);
+//     usersData.push(loginData);
 
-    localStorage.setItem('usersData', JSON.stringify(usersData));
-    window.location.href = "deck.html";
+//     localStorage.setItem('usersData', JSON.stringify(usersData));
+//     window.location.href = "deck.html";
     
-}
+// }
 
 async function login(event) {
     loginOrCreate(`/api/auth/login`, event);
 }
   
-  async function create(event) {
+async function create(event) {
     loginOrCreate(`/api/auth/create`, event);
 }
 
