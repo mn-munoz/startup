@@ -20,6 +20,7 @@ async function addCard () {
             dislikeTwo: prompt("What does your character hate? (2/2)")
         };
  
+        
         const resp = await fetch('/api/decks/cards/addCard', {
             method: 'POST',
             headers: {

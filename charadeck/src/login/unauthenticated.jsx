@@ -44,6 +44,7 @@ export function Unauthenticated(props) {
         try{
             if (response.ok) {
                 localStorage.setItem('userName', userName);
+                props.onLogin(userName);
                 navigate('/deck');
               } else {
                 const body = await response.json();

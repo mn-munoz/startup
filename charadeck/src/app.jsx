@@ -27,12 +27,20 @@ export default function App() {
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to=''>Home</NavLink>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="deck">My Deck</NavLink>
+                            {authState === AuthState.Authenticated && (
+                            <li className='nav-item'>
+                            <NavLink className='nav-link' to='deck'>
+                                My Deck
+                            </NavLink>
                             </li>
-                            <li className="nav-item">
-                            <NavLink className="nav-link" aria-current="page" to="updates">Updates</NavLink>
+                            )}
+                            {authState === AuthState.Authenticated && (
+                            <li className='nav-item'>
+                            <NavLink className='nav-link' to='updates'>
+                                Updates
+                            </NavLink>
                             </li>
+                            )}
                             <li className="nav-item">
                             <NavLink className="nav-link" aria-current="page" to="about">About</NavLink>
                             </li>
@@ -51,7 +59,7 @@ export default function App() {
                     setUserName(userName);
                   }}
                 />} exact />
-                <Route path='/deck' element={<Deck />} />
+                <Route path='/deck' element={<Deck userName={userName} />} />
                 <Route path='/updates' element={<Updates />} />
                 <Route path='/about' element={<About />} />
                 <Route path='*' element={<NotFound />} />
