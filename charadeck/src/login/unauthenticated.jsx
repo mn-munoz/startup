@@ -2,12 +2,15 @@ import React from 'react';
 
 import Button from 'react-bootstrap/Button';
 import {MessageDialog} from './messageDialog';
+import { useNavigate } from 'react-router-dom';
 import './login.css'
 
 export function Unauthenticated(props) {
     const [userName, setUserName] = React.useState(props.userName);
     const [password, setPassword] = React.useState('');
     const [displayError, setDisplayError] = React.useState(null);
+
+    const navigate = useNavigate();
 
     async function login() {
         loginOrCreate(`/api/auth/login`);
@@ -41,6 +44,7 @@ export function Unauthenticated(props) {
         try{
             if (response.ok) {
                 localStorage.setItem('userName', userName);
+                navigate('/deck');
               } else {
                 const body = await response.json();
                 setDisplayError(`⚠ Error: ${body.msg}`);
