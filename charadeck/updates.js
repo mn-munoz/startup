@@ -41,8 +41,3 @@ function updateHTML(username) {
     const messageHTML = `<p><span>${username}</span> added a new card on his deck</p>`;
     updatesDiv.innerHTML = messageHTML + updatesDiv.innerHTML;
 }
-
-// setInterval(() => {
-//     const updateText = document.querySelector('.updates');
-//     updateText.innerHTML = '<p><span>Mei </span>included a new card on his deck</p>' + updateText.innerHTML ;
-// }, 6000);
