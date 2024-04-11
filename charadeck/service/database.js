@@ -44,8 +44,9 @@ async function createUser(userName, password) {
 // Have to look how that will be like but hopefully something like
 //user: xxxx
 // deck: [{}{}{}] with {} being data of a card
-async function addDeck(deck) {
-    deckCollection.insertOne(deck);
+async function getDeck(user){
+    const deck = deckCollection.findOne({user: user});
+    return deck;
 }
 
 async function addCard(user, card) {
@@ -66,6 +67,6 @@ module.exports = {
     getUser,
     getUserByToken,
     createUser,
-    addDeck,
+    getDeck,
     addCard,
 };

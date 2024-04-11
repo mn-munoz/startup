@@ -82,6 +82,24 @@ secureApi.use(async (req, res, next) => {
     }
 });
 
+secureApi.get('/decks/cards/getCards', async (req, res) => {
+  const {username} = req.query;
+
+  try {
+    const user = await db.getUser(username);
+    if (!user) {
+      return res.status(404).send({ msg: 'User not found' });
+    }
+
+    const cards = await db.getDeck(user.user);
+    res.status(200).send({cards});
+    
+  } catch (error){
+    console.error('Error getting cards:', error);
+    res.status(500).send({ msg: 'Internal server error' });
+  }
+}); 
+
 secureApi.post('/decks/cards/addCard', async (_req, res) => {
     const { username, card } = _req.body;
 

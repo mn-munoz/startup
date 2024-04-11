@@ -7,6 +7,7 @@ import {v4 as uuid} from 'uuid';
 export function Deck(props) {
   const [cards, setCards] = React.useState([]);
 
+  const username = props.userName; // 
   let socket;
 
   const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
@@ -14,11 +15,11 @@ export function Deck(props) {
 
   React.useEffect(() => {
     configureWebSocket();
+    loadCards();
   },[]);
-
+  
   async function addCard () {
     try {
-        const username = props.userName; // 
         const card = {
             charName: prompt("Give a name to your character", "Enter name"),
             birthday: prompt(`What is your character's Birthday?`, `Enter birthday`),
@@ -63,6 +64,38 @@ export function Deck(props) {
     } catch(error) {
         console.error("POST request not succesfull", error.message);
     }
+}
+
+
+async function loadCards() {
+  try {
+    const res = await fetch(`/api/decks/cards/getCards?username=${username}`, {
+      method: 'GET',
+      credentials: 'include',
+  });
+
+    const deck = await res.json();
+    const prevCards = deck.cards.cards;
+    const id = uuid();
+
+    const savedCards = prevCards.map((card, index) => (
+      <Card
+        key={index} // Use a unique key for each Card component
+        charName={card.charName}
+        birthday={card.birthday}
+        likeOne={card.likeOne}
+        likeTwo={card.likeTwo}
+        likeThree={card.likeThree}
+        dislikeOne={card.dislikeOne}
+        dislikeTwo={card.dislikeTwo}
+      />
+    ));
+
+    setCards([...cards, ...savedCards]); 
+    
+  } catch (error) {
+    console.error('GET request not succesful', error.message)
+  }
 }
 
 function saveDecksLocal(username, card) {
