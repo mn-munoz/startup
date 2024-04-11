@@ -86,7 +86,7 @@ I just need to implement a function to load them back :D However it is all buggy
 ## DB/Login
 
 - MongoDB Atlas database created (Called charadeck)- DONE
-- Stores data in MongoDB (In the collections deck and user)- DONE
+- Stores data in MongoDB (In the collections deck and user)- DONE- AND IMPLEMENTED
 - User registration (Found in login.js)- DONE
 - existing user (found in login.js)- DONE
 - Use MongoDB to store credentials (Found in the collection user)- DONE
@@ -101,7 +101,7 @@ I just need to implement a function to load them back :D However it is all buggy
 
 ## React Deliverance 
 
-- Bundled and transpiled -  Not started
-- Components -  Not started
-- Router - Not started
-- Hooks -  Not started
+- Bundled and transpiled -  DONE
+- Components -  DONE
+- Router - DONE
+- Hooks -  DONE
