@@ -49,6 +49,11 @@ async function getDeck(user){
     return deck;
 }
 
+async function addDeck(deck) {
+  deckCollection.insertOne(deck);
+}
+
+
 async function addCard(user, card) {
   projection = {cards: 1, user: 1};
   const cursor = await deckCollection.findOne({ user });
@@ -63,10 +68,12 @@ async function addCard(user, card) {
   }
 }
 
+
 module.exports = {
     getUser,
     getUserByToken,
     createUser,
     getDeck,
     addCard,
+    addDeck
 };

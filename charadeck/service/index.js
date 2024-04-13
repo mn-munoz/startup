@@ -102,7 +102,7 @@ secureApi.get('/decks/cards/getCards', async (req, res) => {
 
 secureApi.post('/decks/cards/addCard', async (_req, res) => {
     const { username, card } = _req.body;
-
+    console.log('in');
     try {
         const user = await db.getUser(username);
         if (!user) {

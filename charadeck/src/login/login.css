@@ -1,7 +1,29 @@
-main {
+.login-page {
     justify-content: center;
     align-items: center;
+    flex-direction: row;
+    padding: 2rem;
+    max-inline-size: 110rem;
 }
+
+.welcome {
+
+    h1, h2 {
+        text-align: start;
+        line-height: 5rem;
+    }
+
+    h1 {
+        font-size: 4.5em;
+        font-weight: 700;
+        line-height: 5.5rem;
+    }
+}
+
+.login-panel, .welcome {
+    flex-grow: 1;
+}
+
 
 .wrapper {
     inline-size: 45dvw;
@@ -61,18 +83,31 @@ main {
     margin-bottom: 1.2rem;
 }
 
-@media screen and (max-width: 1150px) {
+
+
+
+
+/* /* @media screen and (max-width: 1150px) {
 
     .wrapper {
         inline-size: 65dvw;
     }
     
-}
+} */
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 1150px) {
 
-    .wrapper {
-        inline-size: 90dvw;
+    .login-page {
+        flex-direction: column;
+    }
+
+    .welcome {
+        margin-block-start: 7rem;
+    }
+
+    .wrapper{
+        inline-size: 75dvw;
+        max-inline-size: 40rem;
     }
     
 }

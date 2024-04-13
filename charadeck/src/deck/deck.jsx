@@ -75,7 +75,11 @@ async function loadCards() {
   });
 
     const deck = await res.json();
-    const prevCards = deck.cards.cards;
+    let prevCards = []; 
+
+    if (deck.cards != null) {
+      prevCards = deck.cards.cards;
+    }
     const id = uuid();
 
     const savedCards = prevCards.map((card, index) => (

@@ -40,7 +40,7 @@ export function About(props) {
     img = <img src={imageUrl} alt='stock background'/>;
   }
   return (
-    <main  className='about'>
+    <main  className='about-page'>
       <div className="heading-image">
           {img}
       </div>

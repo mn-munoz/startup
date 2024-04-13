@@ -7,6 +7,8 @@ import { About } from './about/about';
 import { Updates } from './updates/updates';
 import { Deck } from './deck/deck';
 import { AuthState } from './login/authState';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 export default function App() {
     const [userName, setUserName] = React.useState(localStorage.getItem('userName') || '');

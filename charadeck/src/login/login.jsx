@@ -7,8 +7,12 @@ import './login.css'
 
 export function Login({ userName, authState, onAuthChange }) {
   return (
-    <main className='container-fluid text-center'>
-      <div>
+    <main className='container-fluid login-page'>
+      <div className='welcome'>
+        <h1>Welcome to CharaDeck</h1>
+        <h2>An encyclopedia for your characters.</h2>
+      </div>
+      <div className='login-panel'>
         {authState !== AuthState.Unknown}
         {authState === AuthState.Authenticated && (
           <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
